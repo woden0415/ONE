@@ -1,7 +1,7 @@
 <template>
   <div class="one-container">
     <topbar></topbar>
-    <sidebar menuShow='false'></sidebar>
+    <sidebar></sidebar>
   </div>
 </template>
 

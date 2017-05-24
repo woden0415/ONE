@@ -1,6 +1,6 @@
 <template >
   <div class="one-topbar">
-    <a href="javascript:void(0)" class="top-icon icon-menu">
+    <a href="javascript:void(0)" class="top-icon icon-menu" v-on:click="changeMenu">
       <i class="icon one-iconfont one-icon-caidan"></i>
     </a>
     <h4>一个</h4>
@@ -11,10 +11,14 @@
 </template>
 
 <script>
+  import store from '../../vuex.js'
   export default {
-    props: ['menuShow']
+    methods: {
+      changeMenu() {
+        store.commit('changeStatus')
+      }
+    }
   }
-  
 </script>
 
 <style>
