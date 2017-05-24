@@ -22,3 +22,5 @@
 
 - [x] 将公用CSS合并为一个文件，作为异步调用
 主要使用`extract-text-webpack-plugin`插件
+
+- [x] 添加Vuex，实现状态管理
