@@ -3,7 +3,7 @@
     <a href="javascript:void(0)" class="top-icon icon-menu" v-on:click="changeMenu">
       <i class="icon one-iconfont one-icon-caidan"></i>
     </a>
-    <h4>一个</h4>
+    <h4>首页</h4>
     <a href="javascript:void(0)" class="top-icon icon-search">
       <i class="icon one-iconfont one-icon-sousuo_sousuo"></i>
     </a>
