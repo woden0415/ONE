@@ -1,6 +1,6 @@
 /*修饰全局样式*/
-
 a, a:hover, a:active {
+  color: #1e1e1e;
   text-decoration: none;
 }
 ul, ol {

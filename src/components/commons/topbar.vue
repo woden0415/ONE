@@ -1,9 +1,9 @@
 <template >
   <div class="one-topbar">
-    <a href="javascript:void(0)" class="top-icon icon-menu" v-on:click="changeMenu">
+    <a href="javascript:void(0)" class="top-icon icon-menu" v-on:touchend="sideBarShow">
       <i class="icon one-iconfont one-icon-caidan"></i>
     </a>
-    <h4>首页</h4>
+    <h4>{{$route.params.id}}</h4>
     <a href="javascript:void(0)" class="top-icon icon-search">
       <i class="icon one-iconfont one-icon-sousuo_sousuo"></i>
     </a>
@@ -14,7 +14,7 @@
   import store from '../../vuex.js'
   export default {
     methods: {
-      changeMenu() {
+      sideBarShow(){
         store.commit('changeStatus')
       }
     }
@@ -30,10 +30,14 @@
     text-align: center;
   }
   .one-topbar h4 {
+    font-family: Inconsolata;
     padding: 0;
     margin: 0;
     height: 100%;
     line-height: 44px;
+    font-weight: lighter;
+    font-size: 18px;
+    color: rgb(57, 70, 78);
   }
   .one-topbar .top-icon {
     position: absolute;

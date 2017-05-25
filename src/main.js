@@ -12,8 +12,6 @@ import './assets/style/common.css'
 Vue.use(VueRouter);
 Vue.use(VueResource);
 
-
-
 const router = new VueRouter({
   mode: 'history',
   base: __dirname,

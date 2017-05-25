@@ -1,18 +1,14 @@
 import FramePage from './views/Frame.vue'
-import firstcomponent from './components/commons/firstcomponent.vue'
-import secondcomponent from './components/commons/secondcomponent.vue'
+
+const one = {template: '<p>one</p>'}
 
 export default [
   {
     path: '/',
+    redirect: '/one'
+  },
+  {
+    path: '/:id',
     component: FramePage
-  },
-  {
-    path: '/first',
-    component: firstcomponent
-  },
-  {
-    path: '/second',
-    component: secondcomponent
   }
 ]
