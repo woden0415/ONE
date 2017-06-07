@@ -3,7 +3,6 @@
     <div class="pure-u-3-5">
       <ul class="item-list">
         <li v-for="menu in menuLists"><router-link v-bind:to="menu.link">{{menu.title}}</router-link></li>
-        <!--<li v-for="menu in menuLists" v-on:click="routerTo(menu.link)">{{menu.title}}</li>-->
       </ul>
     </div>
     <div class="pure-u-2-5" >
@@ -44,10 +43,6 @@
     methods: {
       sideBarShow(){
         store.commit('changeStatus');
-      },
-      routerTo(path){
-        router.push('one')
-        console.log("a")
       }
     }
   }
@@ -69,6 +64,10 @@
   .one-sidebar li {
     line-height: 44px;
     border-bottom: 1px solid #b7b7b7;
+  }
+  .item-list a{
+    display: inline-block;
+    width: 50%;
   }
   .one-sidebar .mask {
     width: 100%;
