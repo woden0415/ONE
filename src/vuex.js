@@ -4,10 +4,12 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 const store = new Vuex.Store({
   state: {
-    menuShow: false
+    sideMenuActive: true,
+    centerTitle: ''
   },
-  mutations: {
-    changeStatus: state => state.menuShow = !state.menuShow
+  mutations: { 
+    changeStatus: state => state.sideMenuActive = !state.sideMenuActive
+    
   }
 })
 
