@@ -33,7 +33,8 @@
   }
 </script>
 
-<style>
+<style scoped lang="less">
+  @import '../../assets/style/mixins.less';
   .one-mainContent {
     margin-top: -45px;
   }
@@ -65,11 +66,7 @@
     font-size: 23px;
   }
   .main-bg .descriptiop {
-    overflow : hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
+    .line-clamp(3);
     line-height: 1.5;
     margin-bottom: 5px;
   }
@@ -81,14 +78,3 @@
     font-weight: bold;
   }
 </style>
-
-=======
-  </div>
-</template>
-
-<style>
-  p {
-    text-align: right;
-  }
-</style>
->>>>>>> bb127455e91ac02006d78082efd96646cafaa71f

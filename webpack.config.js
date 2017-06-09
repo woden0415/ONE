@@ -26,9 +26,18 @@ module.exports = {
         exclude: /node_modules/
       },
       {
+        test: /\.less$/,
+        use: ["style-loader", "css-loader", 'less-loader']
+      },
+      {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
-          use: 'css-loader'
+          use: {
+            loader: 'css-loader', 
+            options: {
+              sourceMap: false
+            }
+          }
         })
       },
       {

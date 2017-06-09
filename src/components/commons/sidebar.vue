@@ -1,5 +1,5 @@
 <template>
-  <div class="one-sidebar pure-g" v-show="sideMenuActive!=true">
+  <div class="one-sidebar pure-g" v-show="sideMenuActive!=true" ref="sideSection">
     <div class="pure-u-3-5">
       <ul class="item-list">
         <li v-for="menu in menuLists"><router-link v-bind:to="menu.link">{{menu.title}}</router-link></li>
@@ -13,15 +13,6 @@
 
 <script>
   import store from '../../vuex.js'
-  import Vue from 'vue'
-  import VueRouter from 'vue-router'
-  import routePath from '../../router.js'
-  Vue.use(VueRouter);
-  const router = new VueRouter({
-    mode: 'history',
-    base: __dirname,
-    routes: routePath
-  })
   export default {
     data () {
       return {
@@ -44,22 +35,26 @@
       sideBarShow(){
         store.commit('changeStatus');
       }
+    },
+    mounted(){
+      this.$refs.sideSection.style.height = window.innerHeight + 'px';
     }
   }
 </script>
 
-<style>
+<style scoped>
   .one-sidebar {
     position: absolute;
     width: 100%;
     top: 0;
     text-align: center;
     border-right: 1px solid #acacac;
-    z-index: 1;
+    z-index: 2;
   }
   .one-sidebar ul {
     padding: 0;
     background-color: #fff;
+    height: 100%;
   }
   .one-sidebar li {
     line-height: 44px;

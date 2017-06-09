@@ -21,7 +21,7 @@
   }
 </script>
 
-<style>
+<style scoped>
   .one-topbar {
     position: relative;
     height: 44px;
