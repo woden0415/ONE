@@ -1,8 +1,10 @@
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+
+Vue.use(VueRouter);
+
 import FramePage from './views/Frame.vue'
-
-const one = {template: '<p>one</p>'}
-
-export default [
+const routePath = [
   {
     path: '/',
     redirect: '/one'
@@ -12,3 +14,11 @@ export default [
     component: FramePage
   }
 ]
+
+const router = new VueRouter({
+  mode: 'history',
+  base: __dirname,
+  routes: routePath
+})
+
+export default router
