@@ -34,10 +34,13 @@
     methods: {
       sideBarShow(){
         store.commit('changeStatus');
+      },
+      arrowDown() {
+        
       }
     },
     mounted(){
-      this.$refs.sideSection.style.height = window.innerHeight + 'px';
+      this.$refs.sideSection.style.height = document.body.clientHeight + 'px';
     }
   }
 </script>

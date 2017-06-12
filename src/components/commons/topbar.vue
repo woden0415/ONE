@@ -23,7 +23,9 @@
 
 <style scoped>
   .one-topbar {
-    position: relative;
+    position: fixed;
+    width: 100%;
+    top: 0;
     height: 44px;
     background-color: #fff;
     border-bottom: 1px solid #808080;
