@@ -7,9 +7,8 @@ const store = new Vuex.Store({
     sideMenuActive: true,
     centerTitle: ''
   },
-  mutations: { 
+  mutations: {
     changeStatus: state => state.sideMenuActive = !state.sideMenuActive
-    
   }
 })
 

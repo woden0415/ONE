@@ -11,11 +11,10 @@
 </template>
 
 <script>
-  import store from '../../vuex.js'
   export default {
     methods: {
       sideBarShow(){
-        store.commit('changeStatus')
+        this.$store.commit('changeStatus')
       }
     }
   }

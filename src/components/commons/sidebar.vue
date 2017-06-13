@@ -12,7 +12,6 @@
 </template>
 
 <script>
-  import store from '../../vuex.js'
   export default {
     data () {
       return {
@@ -28,15 +27,12 @@
     },
     computed: {
       sideMenuActive(){
-        return store.state.sideMenuActive;
+        return this.$store.state.sideMenuActive;
       }
     },
     methods: {
       sideBarShow(){
-        store.commit('changeStatus');
-      },
-      arrowDown() {
-        
+        this.$store.commit('changeStatus');
       }
     },
     mounted(){
