@@ -5,10 +5,11 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
   state: {
     sideMenuActive: true,
-    centerTitle: ''
+    topicTitle: 'one'
   },
   mutations: {
-    changeStatus: state => state.sideMenuActive = !state.sideMenuActive
+    changeStatus: state =>  state.sideMenuActive = !state.sideMenuActive,
+    changeTitle: (state, title) => state.topicTitle = title
   }
 })
 

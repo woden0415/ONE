@@ -4,14 +4,42 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter);
 
 import FramePage from './views/Frame.vue'
+import one from './components/mains/oneTpl.vue'
+import read from './components/mains/readTpl.vue'
+
+import music from './components/mains/musicTpl.vue'
+import movie from './components/mains/movieTpl.vue'
+import download from './components/mains/downloadTpl.vue'
+import about from './components/mains/aboutTpl.vue'
+
 const routePath = [
   {
     path: '/',
     redirect: '/one'
   },
   {
-    path: '/:id',
-    component: FramePage
+    path: '/one',
+    component: one
+  },
+  {
+    path: '/read',
+    component: read
+  },
+  {
+    path: '/music',
+    component: music
+  },
+  {
+    path: '/movie',
+    component: movie
+  },
+  {
+    path: '/download',
+    component: download
+  },
+  {
+    path: '/about',
+    component: about
   }
 ]
 

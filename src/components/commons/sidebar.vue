@@ -1,8 +1,8 @@
 <template>
-  <div class="one-sidebar pure-g" v-show="sideMenuActive!=true" ref="sideSection">
+  <div class="one-sidebar pure-g" v-show="sideMenuActive" ref="sideSection">
     <div class="pure-u-3-5">
       <ul class="item-list">
-        <li v-for="menu in menuLists"><router-link v-bind:to="menu.link">{{menu.title}}</router-link></li>
+        <li v-for="menu in menuLists" v-on:touchend="changeTitle(menu.link)">{{menu.title}}</li>
       </ul>
     </div>
     <div class="pure-u-2-5" >
@@ -33,6 +33,11 @@
     methods: {
       sideBarShow(){
         this.$store.commit('changeStatus');
+      },
+      changeTitle(title){
+        this.$store.commit('changeTitle', title)
+        this.$router.push({path: title})
+        this.sideBarShow()
       }
     },
     mounted(){

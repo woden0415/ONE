@@ -1,10 +1,14 @@
 <template>
-  <oneTpl></oneTpl>
+  <div class="one-mainContent">
+    <!--<oneTpl></oneTpl>-->
+  <router-view></router-view>
+  </div>
 </template>
 
-<script>
-  import oneTpl from './oneTpl.vue'
-  export default {
-    components: { oneTpl },
+
+<style scoped lang="less">
+  .one-mainContent {
+    padding-top: 44px;
   }
-</script>
+</style>
+

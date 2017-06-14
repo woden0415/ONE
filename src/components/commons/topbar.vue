@@ -1,9 +1,9 @@
 <template >
-  <div class="one-topbar">
+  <div class="one-topbar" ref="topbar">
     <a href="javascript:void(0)" class="top-icon icon-menu" v-on:touchend="sideBarShow">
       <i class="icon one-iconfont one-icon-caidan"></i>
     </a>
-    <h4>{{$route.params.id}}</h4>
+    <h4 v-text="topicTitle"></h4>
     <a href="javascript:void(0)" class="top-icon icon-search">
       <i class="icon one-iconfont one-icon-sousuo_sousuo"></i>
     </a>
@@ -12,6 +12,11 @@
 
 <script>
   export default {
+    computed: {
+      topicTitle: function(){
+        return this.$store.state.topicTitle
+      }
+    },
     methods: {
       sideBarShow(){
         this.$store.commit('changeStatus')

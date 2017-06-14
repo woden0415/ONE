@@ -1,5 +1,5 @@
 <template>
-  <div class="one-mainContent">
+  <div>
     <div class="main-bg" ref="mainBg">
       <div class="shadeBox" ref="shadeBox"></div>
       <div class="main-text">
@@ -7,7 +7,7 @@
         <p class="month">{{mainBg.month}}</p>
         <p class="descriptiop">{{mainBg.description}}</p>
         <a href="#todayDetail">
-          <div class="arrow-down" v-on:click="funca">
+          <div class="arrow-down" v-on:click="arrowDown">
             <i class="icon one-iconfont one-icon-xiangxia"></i>
           </div>
         </a>
@@ -73,11 +73,11 @@
       }
     },
     mounted(){
-      this.$refs.mainBg.style.height = window.innerHeight + 'px';
-      this.$refs.shadeBox.style.height = window.innerHeight + 'px';
+      this.$refs.mainBg.style.height = (window.innerHeight - 44) + 'px';
+      this.$refs.shadeBox.style.height = (window.innerHeight - 44) + 'px';
     },
     methods: {
-      funca : function(){
+      arrowDown : function(){
         this.anchorTrazition();
       }
     }
