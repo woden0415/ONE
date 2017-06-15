@@ -17,6 +17,7 @@
       return {
         menuLists: [
           {link: 'one', title: '一个'},
+          {link: 'picture', title: '图文'},
           {link: 'read', title: '阅读'},
           {link: 'music', title: '音乐'},
           {link: 'movie', title: '影视'},
@@ -48,7 +49,7 @@
 
 <style scoped>
   .one-sidebar {
-    position: absolute;
+    position: fixed;
     width: 100%;
     top: 0;
     text-align: center;
@@ -57,8 +58,9 @@
   }
   .one-sidebar ul {
     padding: 0;
-    background-color: #fff;
     height: 100%;
+    background-color: #fff;
+    box-shadow: 2px 0px 10px #888888;
   }
   .one-sidebar li {
     line-height: 44px;
@@ -71,7 +73,5 @@
   .one-sidebar .mask {
     width: 100%;
     height: 100%;
-    background-color: rgba(192, 192, 192, 0.19);
-    box-shadow: inset 3px 0px 18px 3px #909090;
   }
 </style>

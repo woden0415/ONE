@@ -32,7 +32,6 @@
     top: 0;
     height: 44px;
     background-color: #fff;
-    border-bottom: 1px solid #808080;
     text-align: center;
     z-index: 2;
   }
@@ -43,8 +42,8 @@
     height: 100%;
     line-height: 44px;
     font-weight: lighter;
-    font-size: 18px;
-    color: rgb(57, 70, 78);
+    size: 14px;
+    color: rgba(0, 0, 0, 0.3);
   }
   .one-topbar .top-icon {
     position: absolute;

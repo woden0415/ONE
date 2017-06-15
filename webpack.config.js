@@ -15,9 +15,7 @@ module.exports = {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: {
-          loaders: {
-          }
-          // other vue-loader options go here
+          extractCSS: true
         }
       },
       {
@@ -33,7 +31,7 @@ module.exports = {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
           use: {
-            loader: 'css-loader', 
+            loader: 'css-loader',
             options: {
               sourceMap: false
             }

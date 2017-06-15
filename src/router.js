@@ -6,7 +6,7 @@ Vue.use(VueRouter);
 import FramePage from './views/Frame.vue'
 import one from './components/mains/oneTpl.vue'
 import read from './components/mains/readTpl.vue'
-
+import picture from './components/mains/pictureTpl.vue'
 import music from './components/mains/musicTpl.vue'
 import movie from './components/mains/movieTpl.vue'
 import download from './components/mains/downloadTpl.vue'
@@ -24,6 +24,10 @@ const routePath = [
   {
     path: '/read',
     component: read
+  },
+  {
+    path: '/picture',
+    component: picture
   },
   {
     path: '/music',
