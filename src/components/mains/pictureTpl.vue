@@ -1,27 +1,37 @@
 <template>
   <div class="picture-bg">
-    <pictureItem></pictureItem>
+    <pictureItem  v-for="item in pictureList" :item="item" :key="item.id"></pictureItem>
   </div>
 </template>
 
 <script>
-  const str = "hello world"
   const pictureItem = { template: 
-    `<div class="picture-item-wrapper"><p class="picture-item-date">2017 / 06 / 14</p>
-      <p class="picture-item-no">VOL.1713</p>
+    `<div class="picture-item-wrapper">
+      <p class="picture-item-date">{{item.date}}</p>
+      <p class="picture-item-no">{{item.title}}</p>
       <a class="picture-item-link">
-	      <img src="http://image.wufazhuce.com/FnPF0565x3YrhklQ1tXv8igd_tRX">
+	      <img :src="item.img_url">
       </a>
-      <p class="picture-item-author1">绘画 | Jules de Balincourt</p>
-      <p class="picture-item-description">快乐是个属于成年人的词儿。你不必问一个孩子他是否快乐，你能看得出来。成年人谈论快乐是因为他们大多都不快乐。</p>
-      <p class="picture-item-author2">珍妮特·温特森</p>
-    </div>`
+      <p class="picture-item-author1">{{item.picture_author}}</p>
+      <p class="picture-item-description">{{item.content}}</p>
+      <p class="picture-item-author2">{{item.text_authors}}</p>
+    </div>`,
+    props: ['item']
   }
-  
   export default {
+    data(){
+      return {
+        pictureList: []
+      }
+    },
     components: { pictureItem },
     mounted: function() {
-      // this.$http.json()
+      this.$http.get('/src/assets/json/pictureList.json', {}, {
+        headers:{},
+        emulateJSON: true
+      })
+      .then(response => {this.pictureList = response.data.data})
+      .catch(response =>{console.log(response)})
     }
   }
 </script>
@@ -31,7 +41,9 @@
     background-color: #f9f9f9;
   }
   .picture-item-wrapper {
+    margin-bottom: 15px;
     padding-top: 10px;
+    padding-bottom: 15px;
     background-color: #fff;
     text-align: center;
   }
@@ -45,7 +57,7 @@
   .picture-item-no,
   .picture-item-author1,
   .picture-item-author2 {
-    margin: 15px 0;
+    margin: 15px 0 0 0;
     color: #808080;
     font-size: 10px;
     line-height: 1.6;

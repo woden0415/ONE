@@ -41,8 +41,8 @@
         this.sideBarShow()
       }
     },
-    mounted(){
-      this.$refs.sideSection.style.height = document.body.clientHeight + 'px';
+    updated(){
+      this.$refs.sideSection.style.height = (document.body.clientHeight < window.innerHeight)? window.innerHeight + 'px' : document.body.clientHeight + 'px';
     }
   }
 </script>
