@@ -1,15 +1,5 @@
 <template>
   <div class="read-bg">
-    <!--<div class="read-item-wrapper">
-      <p class="read-item-tag">- 阅读 -</p>
-      <h4 class="read-item-title">抱歉，坐到你隐形的翅膀了</h4>
-      <p class="read-item-author">文／傅踢踢</p>
-      <div class="read-item-img-box">
-        <img src="http://image.wufazhuce.com/FqfrVcIgMRuspRD6qfYlsnV_paFd">
-      </div>
-      <p class="read-item-description">承认你是你，你朋友是你朋友，然后踏踏实实地奋斗，就有这么困难吗？</p>
-      <p class="read-item-date">2017/6/16</p>
-    </div>-->
     <readItem v-for="item in readList" :item="item" :key="item.id"></readItem>
   </div>
 </template>
@@ -29,11 +19,7 @@
     props: {
       item: {
         validator: function(value){
-          if(value.tag_list.length == 0){
-            return value.tag_list = [{id: "31", title: "阅读"}]
-          }else {
-            return value.tag_list
-          }
+          return (value.tag_list.length == 0)? value.tag_list = [{id: "31", title: "阅读"}] : value.tag_list;
         }
       }
     }
@@ -55,9 +41,6 @@
     }
   }
 </script>
-
-
-
 
 <style lang="less">
   @import '../../assets/style/mixins.less';
