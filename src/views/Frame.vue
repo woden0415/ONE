@@ -5,15 +5,17 @@
     <div class="one-mainContent">
       <router-view></router-view>
     </div>
+    <nocontent></nocontent>
   </div>
 </template>
 
 <script>
   import sidebar from '../components/commons/sidebar.vue'
   import topbar from '../components/commons/topbar.vue'
+  import nocontent from '../components/commons/nocontent.vue'
 
   export default {
-    components: { sidebar, topbar}
+    components: { sidebar, topbar, nocontent}
   }
 </script>
 
