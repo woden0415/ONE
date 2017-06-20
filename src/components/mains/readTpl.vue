@@ -43,14 +43,13 @@
 </script>
 
 <style lang="less">
+  @import '../../assets/style/variables.less';
   @import '../../assets/style/mixins.less';
-  .read-bg {
-    background-color: #f9f9f9;
-  }
   .read-item-wrapper {
     background-color: #fff;
     padding: 0 18px;
     margin-bottom: 15px;
+    box-shadow: 0 2px 28px #dfdfdf;
   }
   .read-item-tag {
     padding: 12px 0;

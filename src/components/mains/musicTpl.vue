@@ -1,6 +1,6 @@
 <template>
   <div class="music-bg">
-    <musicItem v-for="item in musicList" :item="item"></musicItem>
+    <musicItem v-for="item in musicList" :item="item" :key="item.id"></musicItem>
   </div>  
 </template>
 
@@ -47,13 +47,12 @@
 
 
 <style lang="less">
+  @import '../../assets/style/variables.less';
   @import '../../assets/style/mixins.less';
-  .music-bg {
-    background-color: #f9f9f9;
-  }
   .music-item-wrapper {
     background-color: #fff;
     margin-bottom: 15px;
+    box-shadow: 0 2px 28px #dfdfdf;
   }
   .music-item-category {
     text-align: center;

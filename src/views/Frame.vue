@@ -17,7 +17,8 @@
   }
 </script>
 
-<style>
+<style lang="less">
+  @import "../assets/style/variables.less";
   .one-container {
     position: relative;
     -webkit-font-smoothing: antialiased;
@@ -25,5 +26,6 @@
   }
   .one-mainContent {
     padding-top: 44px;
+    background-color: @mainContent-bg;
   }
 </style>

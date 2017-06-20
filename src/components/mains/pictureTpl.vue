@@ -37,15 +37,14 @@
 </script>
 
 <style lang="less">
-  .picture-bg {
-    background-color: #f9f9f9;
-  }
+  @import '../../assets/style/variables.less';
   .picture-item-wrapper {
     margin-bottom: 15px;
     padding-top: 10px;
     padding-bottom: 15px;
     background-color: #fff;
     text-align: center;
+    box-shadow: 0 2px 28px #dfdfdf;
   }
   .picture-item-date {
     font-family: 'Courier New';
