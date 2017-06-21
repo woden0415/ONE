@@ -1,14 +1,16 @@
 <template>
-  <div class="one-sidebar pure-g" v-show="sideMenuActive" ref="sideSection">
-    <div class="pure-u-3-5">
-      <ul class="item-list">
-        <li v-for="menu in menuLists" v-on:touchend="changeTitle(menu.link)">{{menu.title}}</li>
-      </ul>
+  <transition name="sideanimate">
+    <div class="one-sidebar pure-g" v-show="sideMenuActive" ref="sideSection">
+      <div class="pure-u-3-5">
+        <ul class="item-list">
+          <li v-for="menu in menuLists" v-on:touchend="changeTitle(menu.link)">{{menu.title}}</li>
+        </ul>
+      </div>
+      <div class="pure-u-2-5" >
+        <div class="mask" v-on:touchend="sideBarShow"></div>
+      </div>
     </div>
-    <div class="pure-u-2-5" >
-      <div class="mask" v-on:touchend="sideBarShow"></div>
-    </div>
-  </div>
+  </transition>
 </template>
 
 <script>
@@ -53,7 +55,6 @@
     width: 100%;
     top: 0;
     text-align: center;
-    border-right: 1px solid #acacac;
     z-index: 2;
   }
   .one-sidebar ul {
@@ -73,5 +74,12 @@
   .one-sidebar .mask {
     width: 100%;
     height: 100%;
+  }
+  .sideanimate-enter-active, .sideanimate-leave-active {
+    left: 0;
+    transition: all .2s linear;
+  }
+  .sideanimate-enter, .sideanimate-leave-to {
+    left: -192px;
   }
 </style>
